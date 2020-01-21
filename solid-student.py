@@ -41,8 +41,37 @@ class Student:
         return f'{self.__first_name} {self.__last_name}'
 
 #setters for all except the read-only properties
+    @first_name.setter
+    def first_name(self, new_first_name):
+        if type(new_first_name) is str:
+            self.__first_name = new_first_name
+        else:
+            raise TypeError("This should be a written name.")
 
-charles = Student("charles", "jackson", 0, "cohort 36")
+    @last_name.setter
+    def last_name(self, new_last_name):
+        if type(new_last_name) is str:
+            self.__last_name = new_last_name
+        else:
+            raise TypeError("This should be a written name.")
+
+    @age.setter
+    def age(self, new_age):
+        if type(new_age) is int:
+            self.__age = new_age
+        else:
+            raise TypeError("This should be a number.")
+    
+    @cohort.setter
+    def cohort(self, new_cohort):
+        if type(new_cohort) is str:
+            self.__cohort = new_cohort
+        else:
+            raise TypeError("This should be a written as 'Cohort' followed by the cohort number.")
+    
+
+charles = Student("Charles", "Jackson", 0, "cohort 36")
+
 print(charles.full_name)
 
 
