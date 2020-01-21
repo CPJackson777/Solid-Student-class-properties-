@@ -35,6 +35,15 @@ class Student:
     def cohort(self):
         return self.__cohort
 
+    #full name coded as a read-only string
+    @property
+    def full_name(self):
+        return f'{self.__first_name} {self.__last_name}'
+
+#setters for all except the read-only properties
+
+charles = Student("charles", "jackson", 0, "cohort 36")
+print(charles.full_name)
 
 
     
